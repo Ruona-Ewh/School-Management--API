@@ -28,9 +28,10 @@ class TestingConfig(Config):
     
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = uri
+    """SQLALCHEMY_DATABASE_URI = uri
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    DEBUG = config('DEBUG', False, cast=bool)
+    DEBUG = config('DEBUG', False, cast=bool)"""
+    pass
     
 
 config_dict = {
