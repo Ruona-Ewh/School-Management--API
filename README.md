@@ -15,7 +15,9 @@
 <br />
 
 
-<div align="center"><h1> Student Mangement API</h1><div>
+<div align="center">
+  <h1> Student Mangement API</h1>
+  </div>
 
 
 
@@ -37,7 +39,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-School-Managemet-API">Student-Management--API</a>
+      <a href="#about-School-Managemet-API">About Student-Management--API</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
