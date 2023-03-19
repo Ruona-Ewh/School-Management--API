@@ -299,6 +299,22 @@ class StudentTestCase(unittest.TestCase):
         response = self.client.delete('/student/1', headers=headers)
         assert response.status_code == 200
 
+
+
+    def gpa(self):
+        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
+
+        token = create_access_token(identity=admin.id)
+
+        headers = {
+            "Authorization": f"Bearer {token}"
+        }
+
+    # Calculate a student's GPA
+        response = self.client.get('/student/3/gpa', headers=headers)
+        assert response.status_code == 200
+        assert response.json["message"] == "Student's GPA is 4.0"
+
     
    
 
