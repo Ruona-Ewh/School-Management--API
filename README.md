@@ -16,12 +16,12 @@
 
 <div>
   <p align="center">
-    <a href="https://github.com/Ruona-Ewh/School-Management-API#readme"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ruona-Ewh/School-Management--API#readme"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Ruona-Ewh/School-Management-API/issues">Report Bug</a>
+    <a href="https://github.com/Ruona-Ewh/School-Management--API/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Ruona-Ewh/School-Management-API/issues">Request Feature</a>
+    <a href="https://github.com/Ruona-Ewh/School-Management--API/issues">Request Feature</a>
   </p>
 </div>
 
@@ -37,7 +37,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    </li><a href="setup">Setup</a></li>
+    </li><a href="#setup">Setup</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -74,7 +74,7 @@ To get make use of this API, follow the steps below.
 
 1. Clone this repo
    ```sh
-   git clone https://github.com/Ruona-Ewh/School-Management-API.git
+   git clone https://github.com/Ruona-Ewh/School--Management-API.git
    ```
 2. Activate the virtual environment
    ```sh
@@ -97,7 +97,7 @@ To get make use of this API, follow the steps below.
 <!-- License -->
 ## License
 
-Distributed under the MIT License. See <a href="https://github.com/Ruona-Ewh/Ruonas-blog/blob/main/LICENSE">LICENSE</a> for more information.
+Distributed under the MIT License. See <a href="[https://github.com/Ruona-Ewh/Ruonas-](https://github.com/Ruona-Ewh/School-Management--API/blob/main/LICENSE)">LICENSE</a> for more information.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
@@ -108,7 +108,7 @@ Distributed under the MIT License. See <a href="https://github.com/Ruona-Ewh/Ruo
 
 Ogheneruona Ewherido - [@RUONA_E_](https://twitter.com/RUONA_E_) - ruonae@gmail.com
 
-Project Link: [Ruonas Blog](https://github.com/Ruona-Ewh/Ruonas-blog)
+Project Link: [Ruonas Blog](https://github.com/Ruona-Ewh/School-Management--API)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
@@ -126,16 +126,16 @@ This project was made possible by:
 ---
 
 <!-- Markdown Links & Images -->
-[contributors-shield]: https://img.shields.io/github/contributors/Ruona-Ewh/Ruonas-blog.svg?style=for-the-badge
-[contributors-url]: https://github.com/Ruona-Ewh/Ruonas-blog/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Ruona-Ewh/Ruonas-blog.svg?style=for-the-badge
-[forks-url]: https://github.com/Ruona-Ewh/Ruonas-blog/network/members
-[stars-shield]: https://img.shields.io/github/stars/Ruona-Ewh/Ruonas-blog.svg?style=for-the-badge
-[stars-url]: https://github.com/Ruona-Ewh/Ruonas-blog/stargazers
+[contributors-shield]: https://img.shields.io/github/contributors/Ruona-Ewh/School-Management--API.svg?style=for-the-badge
+[contributors-url]: https://github.com/Ruona-Ewh/School-Management--API/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Ruona-Ewh/School-Management--API.svg?style=for-the-badge
+[forks-url]: https://github.com/Ruona-Ewh/School-Management--API/network/members
+[stars-shield]: https://img.shields.io/github/stars/Ruona-Ewh/School-Management--API.svg?style=for-the-badge
+[stars-url]: https://github.com/Ruona-Ewh/School-Management--API/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Ruona-Ewh/Ruonas-blog.svg?style=for-the-badge
-[issues-url]: https://github.com/Ruona-Ehw/Ruonas-blogissues
-[license-shield]: https://img.shields.io/github/license/Ruona-Ewh/Ruonas-blog.svg?style=for-the-badge
-[license-url]: https://github.com/Ruona-Ewh/Ruonas-blog/blob/main/LICENSE.txt
+[issues-url]: https://github.com/Ruona-EwhSchool-Management--APIissues
+[license-shield]: https://img.shields.io/github/license/Ruona-Ewh/School-Management--APIsvg?style=for-the-badge
+[license-url]: https://github.com/Ruona-Ewh/School-Management--API/blob/main/LICENSE.txt
 [twitter-shield]: https://img.shields.io/badge/-@RUONA_E-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/RUONA_E_
 [twitter-url]: https://twitter.com/RUONA_E_
 [python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
