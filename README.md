@@ -14,8 +14,8 @@
 
 <br />
 
-<!--Title -->
-<div align="center"><h1> Student Mangement API</h1>I<div>
+
+<div align="center"><h1> Student Mangement API</h1><div>
 
 
 
