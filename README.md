@@ -15,7 +15,7 @@
 <br />
 
 <!--Title -->
-# Student Mnagement API
+<div align="center"> # Student Mangement API<div>
 
 
 ---
