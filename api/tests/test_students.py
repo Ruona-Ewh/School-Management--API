@@ -246,14 +246,14 @@ class StudentTestCase(unittest.TestCase):
             "Authorization": f"Bearer {token}"
         }
          
-         # Retrieve a student's scorees
+         # Retrieve a student's scores
         response = self.client.get('/students/4/scores', headers=headers)
 
         assert response.status_code == 200
 
         assert response.json == [{
             "course_name": "Igneous Petrology",
-            "percent_grade": 80,
+            "score": 80,
             
         }]
 
