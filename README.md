@@ -13,6 +13,9 @@
 </div>
 
 <br />
+---
+# Student Mnagement API
+---
 
 <div>
   <p align="center">
@@ -32,7 +35,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-School-Managemet-API">School-Management--API</a>
+      <a href="#about-School-Managemet-API">Student-Management--API</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -47,7 +50,7 @@
 
 ---
 
-<!-- About the Blog -->
+<!-- About the API-->
 ## About
 This is a student management REST API that was built using the Flask-RESTX framework in Python.
 
