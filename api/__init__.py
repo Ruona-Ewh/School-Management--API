@@ -42,7 +42,7 @@ def create_app(config=config_dict['dev']):
 
     description = (
         'A Student Management REST API service. \n'
-        'Repository: https://github.com/Ruona-Ewh/School-Management-API'
+        'Repository: https://github.com/Ruona-Ewh/School-Management--API'
     )
 
 
