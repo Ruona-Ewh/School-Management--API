@@ -13,7 +13,7 @@
 </div>
 
 <br />
----
+
 <!--Title -->
 # Student Mnagement API
 
