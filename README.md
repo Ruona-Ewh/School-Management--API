@@ -32,7 +32,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-Ruonas-blog">About School-Management-API</a>
+      <a href="#about-School-Managemet-APO">About School-Management--API</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -74,7 +74,7 @@ To get make use of this API, follow the steps below.
 
 1. Clone this repo
    ```sh
-   git clone https://github.com/Ruona-Ewh/School--Management-API.git
+   git clone https://github.com/Ruona-Ewh/School-Management--API.git
    ```
 2. Activate the virtual environment
    ```sh
@@ -108,7 +108,7 @@ Distributed under the MIT License. See <a href="[https://github.com/Ruona-Ewh/Ru
 
 Ogheneruona Ewherido - [@RUONA_E_](https://twitter.com/RUONA_E_) - ruonae@gmail.com
 
-Project Link: [Ruonas Blog](https://github.com/Ruona-Ewh/School-Management--API)
+Project Link: [School Managemen API](https://github.com/Ruona-Ewh/School-Management--API)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
@@ -132,9 +132,9 @@ This project was made possible by:
 [forks-url]: https://github.com/Ruona-Ewh/School-Management--API/network/members
 [stars-shield]: https://img.shields.io/github/stars/Ruona-Ewh/School-Management--API.svg?style=for-the-badge
 [stars-url]: https://github.com/Ruona-Ewh/School-Management--API/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Ruona-Ewh/Ruonas-blog.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Ruona-Ewh/School-Management--API.svg?style=for-the-badge
 [issues-url]: https://github.com/Ruona-EwhSchool-Management--APIissues
-[license-shield]: https://img.shields.io/github/license/Ruona-Ewh/School-Management--APIsvg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/Ruona-Ewh/School-Management--API.svg?style=for-the-badge
 [license-url]: https://github.com/Ruona-Ewh/School-Management--API/blob/main/LICENSE.txt
 [twitter-shield]: https://img.shields.io/badge/-@RUONA_E-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/RUONA_E_
 [twitter-url]: https://twitter.com/RUONA_E_
