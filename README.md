@@ -32,12 +32,12 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-School-Managemet-APO">About School-Management--API</a>
+      <a href="#about-School-Managemet-API">School-Management--API</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    </li><a href="#setup">Setup</a></li>
+    <li><a href="#setup">Setup</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -97,7 +97,7 @@ To get make use of this API, follow the steps below.
 <!-- License -->
 ## License
 
-Distributed under the MIT License. See <a href="[https://github.com/Ruona-Ewh/Ruonas-](https://github.com/Ruona-Ewh/School-Management--API/blob/main/LICENSE)">LICENSE</a> for more information.
+Distributed under the MIT License. See <a href="[https://github.com/Ruona-Ewh/School-Management--API](https://github.com/Ruona-Ewh/School-Management--API/blob/main/LICENSE)">LICENSE</a> for more information.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
