@@ -136,7 +136,7 @@ class GetUpdateDeleteStudent(Resource):
                 'registration_no': student.registration_no
             }
 
-        return response, HTTPStatus.CREATED
+        return response, HTTPStatus.OK
     
     
      
@@ -296,7 +296,7 @@ class GetAddUploadScore(Resource):
         if not enrollment:
             return {"message": "Student is not offering the course"}, HTTPStatus.NOT_FOUND
         
-        # Add a new score
+        # Upload  a new score
         new_score = Score(
             student_id = student_id,
             course_id = data['course_id'],
@@ -385,12 +385,14 @@ class GetStudentGPA(Resource):
             total_units += course.units
             total_points += (4.0 * score.score / 100) * course.units
         
-        gpa = total_points / total_units if total_units != 0 else 0.0
+        gpa = round(total_points / total_units, 2) if total_units != 0 else 0.0
         
         student = Student.query.get(student_id)
-        student.gpa = round(gpa, 2)
+        student.gpa = gpa
+
+
         
-        return round(gpa, 2) , HTTPStatus.OK
+        return {"message": f" The Student's GPA is {gpa}"}, HTTPStatus.OK
         
         
         

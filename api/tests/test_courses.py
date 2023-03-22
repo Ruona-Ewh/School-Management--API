@@ -5,6 +5,7 @@ from ..utils import db
 from flask_jwt_extended import create_access_token
 from ..models.courses import Course
 from ..models.admin import Admin
+from ..models.users import User
 
 
 
@@ -52,14 +53,26 @@ class CourseTestCase(unittest.TestCase):
             "Authorization": f"Bearer {token}"
         }
 
-    #def test_register_students(self):
-        # Register a course
-        reg_data = {
-            "name": "Test Course",
-            "teacher": "Test Teacher"
+         # Register a student
+        data = {
+            "first_name": "betty",
+            "last_name": "boo",
+            "email": "betty@gmail.com",
+            "password": "betty",
+            "registration_no": 1
         }
 
-        response = self.client.post('/courses', json=reg_data)
+        response = self.client.post('/student/signup', json=data, headers=headers)
+
+
+        # Register a course
+        data = {
+            "name": "Igneous Petrology",
+            "teacher": "Mr Shay",
+            "units": 3
+        }
+
+        response = self.client.post('/courses', json=data, headers=headers)
 
         assert response.status_code == 201
 
@@ -79,60 +92,77 @@ class CourseTestCase(unittest.TestCase):
 
         assert teacher == "Mr Shay"
 
-         
         
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    """def test_get_all_courses(self):
-        token = create_access_token(identity="Jacinda")
+    # Retrieve all courses
 
-        headers = {
-            "Authorization": f"Bearer {token}"
+        response = self.client.get('/courses', headers=headers)
+
+        assert response.status_code == 200
+
+        assert response.json == [{
+            "id": 1,
+            "name": "Igneous Petrology",
+            "teacher": "Mr Shay",
+            "units": 3
+            }]
+        
+        # Update a course's details
+        data = {
+            "name": "Metamorphic Petrology",
+            "teacher": "Mr Shay",
+            "units": 3
         }
-            
-        response = self.client.post('/courses', headers=headers)
+
+        response = self.client.put('/courses/1', json=data, headers=headers)
+
+        assert response.status_code == 200
+
+        assert response.json == {
+            "id": 1,
+            "name": "Metamorphic Petrology",
+            "teacher": "Mr Shay",
+            "units": 3            
+        }
+
+
+    # Enroll a student for a course
+        response = self.client.post('/courses/1/students/2', headers=headers)
 
         assert response.status_code == 201
 
-        assert response.json == []"""
-    
+        assert response.json == {
+            "course_id": 1,
+            "course_name": "Metamorphic Petrology",
+            "teacher": "Mr Shay",
+            "student_id": 2,
+            "student_first_name": "betty",
+            "student_last_name": "boo",
+            "registration_no": 1
+        }
+
+
+    # Get all students enrolled for a course
+        response = self.client.get('/courses/1/students', headers=headers)
+
+        assert response.status_code == 200
+
+        assert response.json == [{
+            "student_id": 2,
+            "first_name": "betty",
+            "last_name": "boo",
+            "registration_no": 1
+        }]
+
+
+    # Unenroll a student from a course
+        response = self.client.delete('/courses/1/students/2', headers=headers)
+        assert response.status_code == 200
+
+
+        # Delete a course
+        response = self.client.delete('/courses/1', headers=headers)
+        assert response.status_code == 200
+
+
+        

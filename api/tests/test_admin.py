@@ -35,7 +35,8 @@ class AdminTestCase(unittest.TestCase):
             "first_name": "Jacinda",
             "last_name": "Arden",
             "email": "jacinda@gmail.com",
-            "password": "jacinda"
+            "password": "jacinda",
+            "is_admin": True
         }
         response = self.client.post('/admin/create_admin', json=data)
 
@@ -45,9 +46,15 @@ class AdminTestCase(unittest.TestCase):
 
         assert admin.last_name == "Arden"
 
+        assert admin.email == "jacinda@gmail.com"
+
+        assert admin.is_admin == True
+
+
+
         assert response.status_code == 201
 
-    #Function to Login an admin
+#Function to Login an admin
     def test_admin_login(self):
         data = {
             "email": "jacinda@gmail.com",
@@ -65,5 +72,3 @@ class AdminTestCase(unittest.TestCase):
             "Authorization": f"Bearer {token}"
         }
 
-
-    

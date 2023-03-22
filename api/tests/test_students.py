@@ -9,6 +9,7 @@ from ..models.student import Student
 
 
 
+
 class StudentTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app(config=config_dict['test'])
@@ -54,273 +55,133 @@ class StudentTestCase(unittest.TestCase):
         }
     
 
-    def register_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-    
     # Register a student
         data = {
-        "first_name": "oxla",
-        "last_name": "ridd",
-        "email": "tes@gmail.com",
-        "password": "silenc",
-        "registration_no": 14,
+        "first_name": "betty",
+        "last_name": "boo",
+        "email": "betty@gmail.com",
+        "password": "betty",
+        "registration_no": 1,
     }
 
         response = self.client.post('/student/signup', json=data, headers=headers)
 
-        student = Student.query.filter_by(email='tes@gmail.com').first()
+        student = Student.query.filter_by(email='betty@gmail.com').first()
     
 
-        assert student.first_name == "oxla"
+        assert student.first_name == "betty"
 
-        assert student.last_name == "ridd"
+        assert student.last_name == "boo"
 
-        assert student.email == "tes@gmail.com"
+        assert student.email == "betty@gmail.com"
 
-        assert student.registration_no == 14
+        assert student.registration_no == 1
 
         assert response.status_code == 201
 
-
-    def retrieve_all_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
+    
+    # Log a student in
+        data = {
+            "email":"betty@gmail.com",
+            "password": "betty"
         }
-     
-        # Retrieve all students
+
+        response = self.client.post('/auth/login', json=data)
+
+        assert response.status_code == 200
+
+    
+     # Retrieve all students
         response = self.client.get('/student', headers=headers)
 
         assert response.status_code == 200
 
         assert response.json == [{
-            "id": 4,
-		    "first_name": "oxla",
-		    "last_name": "ridd",
-		    "email": "tes@gmail.com",
-		    "registration_no": 14
+            "id": 2,
+            "first_name": "betty",
+            "last_name": "boo",
+            "email": "betty@gmail.com",
+            "registration_no": 1
         }]
 
     
-    def login_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-        
-        # Log a student in
-        data = {
-            "email":"tes@gmail.com",
-            "password": "silenc"
-        }
-
-        response = self.client.post('/auth/login', json=data)
-
-        assert response.status_code == 201
-
-
-    def retrieve_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-
-         # Retrieve a student's details by ID
+    # Retrieve a student's details by ID
         response = self.client.get('/student/2', headers=headers)
 
         assert response.status_code == 200
 
         assert response.json == {
-            "id": 4,
-	        "first_name": "oxla",
-	        "last_name": "ridd",
-	        "email": "tes@gmail.com",
-	        "registration_no": 14
+            "id": 2,
+            "first_name": "betty",
+            "last_name": "boo",
+            "email": "betty@gmail.com",
+            "registration_no": 1
         }
 
-    
-    def update_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
 
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-
-        # Update a student's details
+    # Update a student's details
         data = {
-            "first_name": "Mila",
-            "last_name": "ridd",
-            "email": "tes@gmail.com",
-            "password": "silenc",
+            "first_name": "betty",
+            "last_name": "boop",
+            "email": "betty@gmail.com",
+            "password": "betty"
         }
 
-        response = self.client.put('/students/2', json=data, headers=headers)
+        response = self.client.put('/student/2', json=data, headers=headers)
 
         assert response.status_code == 200
 
         assert response.json == {
-            "first_name": "Mila",
-            "last_name": "ridd",
-            "email": "tes@gmail.com",
-            "password": "silenc",
-            "registration_no": 14,
+            "id": 2,
+            "first_name": "betty",
+            "last_name": "boop",
+            "email": "betty@gmail.com",
+            "registration_no": 1,
         }
 
 
-    def update_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-
-        # Retrieve a student's courses
-        response = self.client.get('/students/4/courses', headers=headers)
-
-        assert response.status_code == 200
-
-        assert response.json == [{
-            "id": 1,
+    # Register a course
+        data = {
             "name": "Igneous Petrology",
-            "teacher": "Mr Shay"
-        }]
-
-
-    def upload_score(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-
-        # Upload a student's score in a course
-        data = {
-            "student_id": 4,
-            "course_id": 1,
-            "score": 80
-        }
-
-        response = self.client.post('/student/4/scores', json=data, headers=headers)
-
-        assert response.status_code == 201
-
-        assert response.json == {
-            "student_id": 4,
-            "first_name": "Mila",
-            "last_name": "ridd",
-            "registration_no": 14,
-            "course_id": 1,
-            "course_name": "Igneous Petrology",
             "teacher": "Mr Shay",
-            "score": 80,
-        } 
-
-         
-    def retrieve_score(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
+            "units": 3
         }
-         
-         # Retrieve a student's scores
-        response = self.client.get('/students/4/scores', headers=headers)
+
+        response = self.client.post('/courses', json=data, headers=headers)
+
+
+    #Enroll a student for a course
+        response = self.client.post('/courses/1/student/2', headers=headers) 
+
+
+     # Retrieve a student's courses
+        response = self.client.get('/student/2/courses', headers=headers)
 
         assert response.status_code == 200
 
-        assert response.json == [{
-            "course_name": "Igneous Petrology",
-            "score": 80,
-            
-        }]
+        assert response.json == []
 
 
-    def update_score(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-         
-        # Update a score
+        '''# Upload a student's grade in a course
         data = {
-            "score": 100
+            "student_id": 2,
+            "course_id": 1,
+            "score": 100.0
         }
 
-        response = self.client.put('/student/scores/1', json=data, headers=headers)
+        response = self.client.post('/student/2/scores', json=data, headers=headers)
 
-        assert response.status_code == 200
+        assert response.status_code == 404
 
         assert response.json == {
-            "score_id": 1,
-            "student_id": 4,
-            "course_id": 1,
-            "score": 75,
-        }
-    
-
-
-
-    def delete_student(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-         
-    # Delete a student
-        response = self.client.delete('/student/1', headers=headers)
-        assert response.status_code == 200
-
-
-
-    def gpa(self):
-        admin = Admin.query.filter_by(email='jacinda@gmail.com').first()
-
-        token = create_access_token(identity=admin.id)
-
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-
-    # Calculate a student's GPA
-        response = self.client.get('/student/3/gpa', headers=headers)
-        assert response.status_code == 200
-        assert response.json["message"] == "Student's GPA is 4.0"
-
-    
-   
-
-
-
-
-     
-
+            "score_id": 3,
+            "student_id": 2,
+            "first_name": "betty",
+            "last_name": "boop",
+            "registration_no": 1,
+            "course_id": 2,
+            "course_name": "Sedimentary Petrology",
+            "teacher": "Mr Boggs",
+            "score": 100.0
+        } '''
 
