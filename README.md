@@ -77,25 +77,19 @@ The API was built as an exam project by <a href="https://github.com/Ruona-Ewh/">
 
 To get make use of this API, follow the steps below.
 
-### Installation
+1. Visit <a href="https://student-management--api.herokuapp.com"> https://student-management--api.herokuapp.com </a>
 
-1. Clone this repo
+2. Create an admin account by clicking on 'admin' which will reveal the '/admin/create_admin' route.
+
+4. After creating the admin account, sign in via the '/auth/login' route to generate an access token. Copy the acces token
+
+6. At the top right corner of the page, you will see an authorize button click on it and paste the access code in this format:
    ```sh
-   git clone https://github.com/Ruona-Ewh/School-Management--API.git
+   Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVz
    ```
-2. Activate the virtual environment
-   ```sh
-   source env/bin/activate
-   ```
-3. Install project packages
-   ```sh
-   pip install -r requirements.txt
-   ```
-4. Run the app
-   ```sh
-   python3 runserver.py
-   ```
-5. Open the link generated in the terminal on a browser
+   and click 'Authorize'
+   
+5. Now the user has administrative accces and can access all the routes
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
